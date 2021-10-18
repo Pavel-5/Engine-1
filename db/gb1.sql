@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 12 2021 г., 11:31
+-- Время создания: Окт 18 2021 г., 18:25
 -- Версия сервера: 8.0.24
 -- Версия PHP: 7.4.21
 
@@ -60,7 +60,15 @@ INSERT INTO `basket` (`id`, `goods_id`, `session_id`) VALUES
 (56, 1, 'id7563c9se8392ill3msq0ueajs0pftl'),
 (57, 2, 'id7563c9se8392ill3msq0ueajs0pftl'),
 (58, 3, 'id7563c9se8392ill3msq0ueajs0pftl'),
-(59, 3, 'id7563c9se8392ill3msq0ueajs0pftl');
+(59, 3, 'id7563c9se8392ill3msq0ueajs0pftl'),
+(60, 1, 'kahohe0mpn4t553enq422rvsh9jne9uc'),
+(61, 1, 'kahohe0mpn4t553enq422rvsh9jne9uc'),
+(62, 2, 'kahohe0mpn4t553enq422rvsh9jne9uc'),
+(63, 2, '9s52ptvfj6a8qqjda46gcmn6ujdfmmdk'),
+(64, 2, '9s52ptvfj6a8qqjda46gcmn6ujdfmmdk'),
+(65, 3, '9s52ptvfj6a8qqjda46gcmn6ujdfmmdk'),
+(66, 3, '9s52ptvfj6a8qqjda46gcmn6ujdfmmdk'),
+(67, 3, '9s52ptvfj6a8qqjda46gcmn6ujdfmmdk');
 
 -- --------------------------------------------------------
 
@@ -138,7 +146,7 @@ INSERT INTO `images` (`id`, `title`, `views`) VALUES
 (12, '11.jpg', 1),
 (13, '12.jpg', 2),
 (14, '13.jpg', 1),
-(15, '14.jpg', 24),
+(15, '14.jpg', 25),
 (16, '15.jpg', 2);
 
 -- --------------------------------------------------------
@@ -175,7 +183,7 @@ CREATE TABLE `orders` (
   `user_id` int NOT NULL,
   `session_id` varchar(255) NOT NULL,
   `sum` int NOT NULL,
-  `status` enum('Новый','Подтвержден','Собран','Передан в доставку','Доставлен') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+  `status` enum('Новый','Подтвержден','Собран','Передан в доставку','Доставлен') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Новый'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -185,7 +193,9 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `name`, `phone`, `user_id`, `session_id`, `sum`, `status`) VALUES
 (1, 'sdfghj', '123456', 1, '9p3oui4l4httnmneltr97nq6110b2lec', 63, 'Подтвержден'),
 (3, 'hgfds', '54321', 2, 'jc6ujinvrdjcfqqkq5vjh9ukg4ltgcg3', 24, 'Собран'),
-(5, 'gfds', '54222', 2, 'id7563c9se8392ill3msq0ueajs0pftl', 97, 'Подтвержден');
+(5, 'gfds', '54222', 2, 'id7563c9se8392ill3msq0ueajs0pftl', 97, 'Подтвержден'),
+(6, 'dfg', '3454', 1, 'kahohe0mpn4t553enq422rvsh9jne9uc', 49, 'Новый'),
+(7, 'sdfgtrd', '098765', 2, '9s52ptvfj6a8qqjda46gcmn6ujdfmmdk', 38, 'Новый');
 
 -- --------------------------------------------------------
 
@@ -263,7 +273,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `basket`
 --
 ALTER TABLE `basket`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT для таблицы `feedback`
@@ -293,7 +303,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
