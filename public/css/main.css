@@ -1,0 +1,20 @@
+.listGoods {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.cardGood {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.linkGood {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
